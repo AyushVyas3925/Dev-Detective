@@ -172,3 +172,68 @@ button {
         transform: translateY(0);
     }
 }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .app-header {
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+        /* Smaller font to prevent wrapping/overflow */
+    }
+
+    .theme-toggle {
+        font-size: 11px;
+    }
+
+    .search-form {
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        gap: 10px;
+        padding: 15px;
+        justify-content: space-between;
+        /* Spread icon/input */
+    }
+
+    .search-icon {
+        display: block;
+        /* Restore icon */
+        font-size: 20px;
+        margin-left: 10px;
+        color: var(--blue);
+        flex-shrink: 0;
+    }
+
+    #searchInput {
+        /* Input takes remaining space next to icon */
+        flex: 1;
+        min-width: 200px;
+        /* Ensure input doesn't get squashed */
+        padding: 0 10px;
+        margin-bottom: 0;
+        /* Removing bottom margin, using gap now */
+        text-align: left;
+        /* Standard alignment */
+        font-size: 15px;
+        /* Prevent zoom on iOS and fit better */
+    }
+
+    .btn-search {
+        width: 100%;
+        /* Button takes full width on new line */
+        margin-top: 5px;
+        padding: 12px;
+        /* Slightly tighter padding */
+        order: 3;
+        /* Ensure it moves to bottom */
+    }
+
+    .error-msg {
+        order: 4;
+        width: 100%;
+        text-align: center;
+    }
+}
+}
