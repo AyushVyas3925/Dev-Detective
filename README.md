@@ -22,7 +22,7 @@ A polished, responsive GitHub user search application that demonstrates interact
 
 | Desktop View | Battle Mode |
 |:---:|:---:|
-| ![Desktop Preview](screenshots/desktop-preview.png) | ![Battle Mode](screenshots/battle-preview.png) |
+| ![Desktop Preview](screenshots/desktop-preview.png) | ![Mobile View](screenshots/mobile-preview.png) |
 
 > *Note: Screenshots are placeholders. Please add images to the `screenshots/` directory.*
 
@@ -30,7 +30,7 @@ A polished, responsive GitHub user search application that demonstrates interact
 
 ## 🔗 Demo
 
-[**🔴 Live Demo Link**](#) *(Add your deployment link here)*
+[**🔴 Live Demo Link**](#) *(https://dev-finde.netlify.app/)*
 
 > **Note**: This project uses the GitHub API and must be run using a local HTTP server (Live Server or localhost) if not deployed.
 
