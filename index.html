@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Detective | GitHub User Search</title>
+    <meta name="description" content="Search for GitHub users and view their profiles and repositories.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="logo">Dev-Detective</h1>
+            <div role="button" class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                <span class="theme-text">DARK</span>
+                <span class="icon-moon">🌙</span> <!-- Icon placeholder -->
+            </div>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <div class="mode-switch-container">
+                <button id="modeSearch" class="mode-btn active">Search</button>
+                <button id="modeBattle" class="mode-btn">Battle</button>
+            </div>
+
+            <section class="search-section">
+                <!-- Search Form (Single) -->
+                <form id="searchForm" class="search-form active-form">
+                    <div class="search-icon">🔍</div>
+                    <input type="text" id="searchInput" placeholder="Search GitHub username..." required
+                        autocomplete="off">
+                    <button type="submit" class="btn-search">Search</button>
+                    <div id="searchError" class="error-msg" aria-live="polite"></div>
+                </form>
+
+                <!-- Battle Form (Dual) -->
+                <form id="battleForm" class="search-form battle-form hidden">
+                    <div class="battle-inputs">
+                        <div class="input-group">
+                            <div class="search-icon">🤺</div>
+                            <input type="text" id="player1Input" placeholder="Player 1..." autocomplete="off">
+                        </div>
+                        <div class="vs-badge">VS</div>
+                        <div class="input-group">
+                            <div class="search-icon">🤺</div>
+                            <input type="text" id="player2Input" placeholder="Player 2..." autocomplete="off">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-search">Battle</button>
+                    <div id="battleError" class="error-msg" aria-live="polite"></div>
+                </form>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading hidden">Loading...</div>
+
+            <!-- Profile Section -->
+            <section id="profileSection" class="profile-section hidden">
+                <!-- Javascript will inject profile here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/api.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

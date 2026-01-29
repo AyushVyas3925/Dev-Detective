@@ -1,0 +1,54 @@
+:root {
+    /* Base Color Palette */
+    --blue: #0079FF;
+    --blue-hover: #60ABFF;
+    --white: #FEFEFE;
+    --grey-blue: #4B6A9B;
+    /* Light mode text */
+    --dark-grey: #2B3442;
+    --black-blue: #141D2F;
+    /* Dark bg */
+    --dark-blue: #1E2A47;
+    /* Dark card */
+    --red: #F74646;
+    --green: #00C851;
+
+    /* Light Mode (Default) */
+    --bg-body: #F6F8FF;
+    --bg-card: #FEFEFE;
+    --text-primary: #2B3442;
+    --text-secondary: #4B6A9B;
+    --text-accent: #0079FF;
+    --shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --shadow-hover: 0px 20px 40px -10px rgba(70, 96, 187, 0.3);
+    --border-color: transparent;
+
+    /* Typography */
+    --font-main: 'Space Mono', monospace;
+    --h1: 26px;
+    --h2: 22px;
+    --h3: 16px;
+    --h4: 13px;
+    --body: 15px;
+
+    /* Spacing & Radius */
+    --radius: 15px;
+    --radius-sm: 10px;
+    --spacing-sm: 10px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-body: #141D2F;
+    --bg-card: #1E2A47;
+    --text-primary: #FFFFFF;
+    --text-secondary: #FFFFFF;
+    --text-accent: #0079FF;
+    --shadow: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0px 20px 40px -10px rgba(0, 0, 0, 0.4);
+    --border-color: rgba(255, 255, 255, 0.05);
+}

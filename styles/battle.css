@@ -1,0 +1,237 @@
+/* Mode Switcher */
+.mode-switch-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.mode-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    transition: var(--transition);
+    opacity: 0.6;
+    border-radius: var(--radius-sm);
+}
+
+.mode-btn.active {
+    color: var(--white);
+    background-color: var(--blue);
+    opacity: 1;
+    box-shadow: 0 4px 10px rgba(0, 121, 255, 0.3);
+}
+
+.mode-btn:hover:not(.active) {
+    color: var(--text-primary);
+    background-color: var(--bg-card);
+    /* Subtle hover bg */
+    opacity: 1;
+}
+
+/* Battle Form */
+.battle-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px;
+    /* More padding for battle form */
+}
+
+.battle-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--bg-body);
+    border-radius: var(--radius-sm);
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.input-group:focus-within {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(0, 121, 255, 0.1);
+}
+
+.battle-form .input-group input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: var(--text-primary);
+    border: none;
+    font-size: 16px;
+}
+
+.vs-badge {
+    font-weight: 900;
+    color: var(--red);
+    font-style: italic;
+    font-size: 24px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Battle Results */
+.battle-arena {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.battle-card {
+    position: relative;
+    border-radius: var(--radius);
+    transition: transform 0.4s ease;
+    /* Clean slate inheritance */
+    background: transparent;
+}
+
+.battle-card .profile-card {
+    margin-bottom: 0;
+    height: 100%;
+    /* Equal height */
+    padding: 24px;
+    /* Reduced padding for battle cards */
+
+    /* Layout Adjustments for Compactness */
+    grid-template-columns: 75px 1fr;
+    /* Smaller avatar column */
+    gap: 0 20px;
+}
+
+/* Specific Battle Mode Overrides to fix overlap */
+.battle-card .avatar {
+    width: 75px;
+    height: 75px;
+}
+
+.battle-card .profile-header {
+    flex-direction: column;
+    /* Stack name and date */
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.battle-card .joined-date {
+    padding-top: 0;
+    font-size: 13px;
+}
+
+.battle-card .profile-name h2 {
+    font-size: 20px;
+    /* Smaller header for battle */
+}
+
+.battle-card .bio {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.battle-card .stats-container {
+    padding: 12px 20px;
+    /* Compact stats */
+    margin-bottom: 25px;
+}
+
+.battle-card .stat p {
+    font-size: 18px;
+}
+
+.battle-card .links-container {
+    gap: 10px;
+    /* Tighter links */
+    font-size: 13px;
+}
+
+/* Winner/Loser visual cues */
+.winner-card {
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+.winner-card .profile-card {
+    border: 2px solid var(--green);
+    box-shadow: 0 10px 40px rgba(0, 200, 81, 0.15);
+}
+
+.loser-card {
+    opacity: 0.85;
+    transform: scale(0.98);
+}
+
+.loser-card .profile-card {
+    border: 2px solid var(--red);
+    filter: grayscale(0.6);
+    /* Desaturate loser slightly */
+}
+
+.winner-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 200, 81, 0.4);
+    z-index: 10;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .battle-inputs {
+        flex-direction: column;
+    }
+
+    .battle-arena {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        /* More gap when stacked */
+    }
+
+    .winner-card {
+        transform: scale(1);
+    }
+
+    .loser-card {
+        transform: scale(1);
+    }
+
+    .battle-card .profile-card {
+        padding: 30px;
+        /* Restore padding on mobile stack */
+        grid-template-columns: 1fr;
+        /* Stack avatar again on mobile */
+        grid-template-areas:
+            "header"
+            "bio"
+            "stats"
+            "links";
+    }
+
+    .battle-card .avatar {
+        /* If we want avatar shown, we need to re-add it to grid area or keep it hidden/absolute */
+        /* For simplicity mobile stack usually hides or centers avatar. Let's rely on component.css mobile rules but ensure overrides work */
+        /* Actually component.css sets grid-template-areas for mobile. We need to match that. */
+        grid-row: 1 / span 2;
+        /* Match standard mobile behavior if needed, or better yet, just let standard mobile CSS take over if screens are small */
+    }
+}
