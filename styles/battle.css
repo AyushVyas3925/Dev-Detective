@@ -57,7 +57,8 @@
     background: var(--bg-body);
     border-radius: var(--radius-sm);
     padding: 5px 15px;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-color);
+    /* Added border definition */
     transition: var(--transition);
 }
 
