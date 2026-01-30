@@ -120,7 +120,10 @@
         const repoItems = repos.map(repo => {
             return `
                 <a href="${repo.html_url}" target="_blank" class="repo-item">
-                    <div class="repo-name">${repo.name}</div>
+                    <div class="repo-info">
+                        <div class="repo-name">${repo.name}</div>
+                        <div class="repo-date">Updated ${new Date(repo.updated_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
+                    </div>
                     <div class="repo-stars">⭐ ${repo.stargazers_count}</div>
                 </a>
             `;
