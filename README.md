@@ -37,22 +37,17 @@ Check out the live version here:
 
 ## ✨ Features
 
-### 🔹 Level 1: User Search
-- **Real-Time Data**: Fetches user profiles instantly via the GitHub REST API.
-- **Profile Card**: Displays avatar, name, bio, join date, and social links.
-- **Robustness**: Includes a loading indicator and gracefully handles "User Not Found" (404) errors.
-
-### 🔹 Level 2: Repository Analysis
-- **Repo Fetching**: Automatically retrieves the user's public repositories.
-- **Smart Display**: Shows the top 5 most recently updated repositories.
-- **Deep Integration**: Repositories are clickable and show star counts.
-- **Formatting**: Dates are converted from ISO format to human-readable strings.
-
-### 🔹 Level 3: Battle Mode ⚔️
-- **Competitor Comparison**: Compare two GitHub users side-by-side.
-- **Parallel Execution**: Uses `Promise.all` to fetch data for both users simultaneously.
-- **Winner Logic**: Determines a winner based on Followers + Public Repos.
-- **Visual Feedback**: The winner is highlighted with a crown; the loser is dimmed.
+- � **Real-Time Data**: Fetches user profiles instantly via the GitHub REST API.
+- 🆔 **Profile Card**: Displays avatar, name, bio, join date, and social links.
+- 🛡️ **Robustness**: Includes a loading indicator and gracefully handles "User Not Found" (404) errors.
+- � **Repo Fetching**: Automatically retrieves the user's public repositories.
+- 📊 **Smart Display**: Shows the top 5 most recently updated repositories.
+- 🔗 **Deep Integration**: Repositories are clickable and show star counts.
+- 📅 **Formatting**: Dates are converted from ISO format to human-readable strings.
+- ⚔️ **Competitor Comparison**: Compare two GitHub users side-by-side.
+- 🚀 **Parallel Execution**: Uses `Promise.all` to fetch data for both users simultaneously.
+- 🏆 **Winner Logic**: Determines a winner based on Followers + Public Repos.
+- 👑 **Visual Feedback**: The winner is highlighted with a crown; the loser is dimmed.
 
 ---
 
